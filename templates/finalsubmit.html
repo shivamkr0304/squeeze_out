@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/finalsubmit.css" type="text/css">
+</head>
+<body>
+    <form>
+        <select id="branch">
+            <option value="branch">Select Branch</option>
+            <option value="branch">CSE-I</option>
+            <option value="branch">CSE-II</option>
+            <option value="branch">CSE-III</option>
+            <option value="branch">CSIT</option>
+            <option value="branch">CSEAI</option>
+            <option value="branch">CSEDS</option>
+            <option value="branch">CST</option>
+            <option value="branch">CIVIL</option>
+            <option value="branch">MECHANICAL</option>
+            <option value="branch">EE</option>
+            <option value="branch">EEE</option>
+            <option value="branch">ECE</option>
+        </select>
+        <select id="batch">
+            <option value="batch">Select Batch</option>
+            <option value="batch">2020-24</option>
+            <option value="batch">2021-25</option>
+            <option value="batch">2022-26</option>
+            <option value="batch">2023-27</option>
+        </select>
+    </form>
+    <h2 align="center">The feedback you submitted:</h2>
+    <div class="container" align="center">
+        <button type="submit" class="btn" onclick="openpopup()">Submit</button>
+        <a href="feedback.html"><button type="button" class="btn">Back</button></a>
+        <div class="popup" id="popup">
+                <img src="/static/img/tick.png">
+                <h2>Thank You!</h2>
+                <p>
+                Your feedback has been succesfully submitted. Thanks!
+                </p>
+                <button type="button" onclick="closepopup()">OK</button>
+            </div>
+    </div>
+
+    <script>
+        let popup=document.getElementById("popup");
+
+        function openpopup(){
+            popup.classList.add("open-popup");
+        }
+        function closepopup(){
+            popup.classList.remove("open-popup");
+        }
+    </script>
+</body>
+</html>

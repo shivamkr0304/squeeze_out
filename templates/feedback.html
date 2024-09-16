@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    <title>Feedback page</title>
+</head>
+<body>
+    
+<form name="feed-form" onsubmit="return validation()" method="POST">
+        {%csrf_token%}
+    <table class="content-table">
+        <caption></caption>
+        <thead>
+        <tr>
+            <!--{%for fac in list %}-->
+            
+            <!--<th>Prof. Debasish Das<br>(Sub: MLCI)</th>
+            <th>Prof. Jayant Jha<br>(Sub: OS)</th>
+            <th>Prof. Soumya Goswami<br>(Sub: CNDC)</th>
+            <th>Prof. Lopamudra Das<br>(Sub: WSN )</th>
+            <th>Prof. Suryakanta Nayak<br>(Sub: CC)</th>-->
+            <th>S No.</th>
+            <th>Factors</th>
+            {% for li in list %}
+            <th> {{li.fac_name1}} <br> SUB : {{li.sub_name1}} </th>
+            <th> {{li.fac_name2}} <br> SUB : {{li.sub_name2}} </th>
+            <th> {{li.fac_name3}} <br> SUB : {{li.sub_name3}} </th>
+            <th> {{li.fac_name4}} <br> SUB : {{li.sub_name4}} </th>
+            <th> {{li.fac_name5}} <br> SUB : {{li.sub_name5}} </th>
+            {%endfor%}
+
+        <!--
+        {%for sub in sub_list%}
+        <th>{{fac.faculty_name}}<br> {{sub.sub_name}} </th>
+        {%endfor%}
+        
+
+            <th>{{fac.faculty_name}}<br>Sub: {{fac.sub_id.sub_name}} </th>
+            
+            
+            {%endfor%}-->
+        </tr>
+        </thead>
+        <tr>
+            <td>1</td>
+            <td>Explaining ability</td>
+
+            <!--<td>
+
+                <iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;align-items: center;" scrolling="no"></iframe>
+                {% comment %} <input type="number" name="f_fac1_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;">
+                <button type="submit" class="btn" onclick="openpopup2()">Submit</button> {% endcomment %}
+            </td>
+            
+            <td><iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;" scrolling="no"></iframe></td>
+            <td><iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;" scrolling="no"></iframe></td>
+            <td><iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;" scrolling="no"></iframe></td>
+            <td><iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;" scrolling="no"></iframe></td>-->
+       
+        <td align="center"> <input type="number" name="f_fac1_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac2_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac3_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac4_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac5_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;"> </td> 
+            
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Quality of content delivered</td>
+            <td align="center"> <input type="number" name="f_fac1_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;"> </td>
+            <td align="center"> <input type="number" name="f_fac2_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;"> </td>
+            <td align="center"> <input type="number" name="f_fac3_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+            <td align="center"> <input type="number" name="f_fac4_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+            <td align="center"> <input type="number" name="f_fac5_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td> 
+            <!--      <td><iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;" scrolling="no"></iframe></td>
+            <td><iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;" scrolling="no"></iframe></td>
+            <td><iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;" scrolling="no"></iframe></td>
+            <td><iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;" scrolling="no"></iframe></td>
+            <td><iframe src="{% url 'testgame' %}" style="border: none;height:150px;width: 220px;" scrolling="no"></iframe></td>
+            -->
+      
+            
+            
+        </tr>
+        <tr>
+        <td>3</td>
+        <td>Interaction with students</td>
+        <td align="center"> <input type="number" name="f_fac1_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac2_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac3_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac4_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac5_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td> 
+        </tr>
+
+        <tr>
+        <td>4</td>
+        <td>Doubt clearance abilities</td>
+        <td align="center"> <input type="number" name="f_fac1_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac2_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac3_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac4_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac5_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td> 
+        </tr>
+        <tr>
+        <td>5</td>
+        <td>Clarity of language used to deliver lectures</td>
+        <td align="center"> <input type="number" name="f_fac1_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac2_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac3_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac4_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+        <td align="center"> <input type="number" name="f_fac5_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td> 
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Attention span and attitude towards students</td>
+            <td align="center"> <input type="number" name="f_fac1_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;" style="width:120px;text-align: center;"> </td>
+            <td align="center"> <input type="number" name="f_fac2_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;"> </td>
+            <td align="center"> <input type="number" name="f_fac3_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;"> </td>
+            <td align="center"> <input type="number" name="f_fac4_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;"> </td>
+            <td align="center"> <input type="number" name="f_fac5_field1" placeholder="Enter Rating" min="1" max="5"  required style="width:120px;text-align: center;"> </td> 
+        </tr>
+        <tr>
+            <td>7</td>
+            <td >Course Completion on time</td>
+            <td align="center"> <input type="number" name="f_fac1_field1" placeholder="Enter Rating" min="1" max="5"  required> </td>
+            <td align="center"> <input type="number" name="f_fac2_field1" placeholder="Enter Rating" min="1" max="5"  required> </td>
+            <td align="center"> <input type="number" name="f_fac3_field1" placeholder="Enter Rating" min="1" max="5"  required> </td>
+            <td align="center"> <input type="number" name="f_fac4_field1" placeholder="Enter Rating" min="1" max="5"  required> </td>
+            <td align="center"><input type="number" name="f_fac5_field1" placeholder="Enter Rating" min="1" max="5"  required  </td>
+        </tr>
+        
+    </table>
+    <div class="buttons" align="center">
+    <a href="finalsubmit.html"><button type="submit" class="btn">Submit</button></a>
+    <a href=""><button type="reset" class="btn">Reset</button></a>
+   <a href=""> <button type="reset" class="btn">Logout</button></a>
+    </div>
+    
+</form>
+    <!-- <div class="popup1" id="popup1">
+        <h4>Are you sure you want to submit?</h4>
+        <p>
+        Check your feedback once again:
+        </p>
+        <button type="submit" onclick="openpopup2(),closepopup1()">final submit</button>
+        <button type="button" onclick="closepopup1()">back</button>
+    </div> -->
+
+    <!-- <div class="popup2" id="popup2">
+        <img src="/static/img/tick.png">
+        <h2>Thank You!</h2>
+        <p>
+        Your feedback has been succesfully submitted. Thanks!
+        </p>
+        <button type="button" onclick="closepopup2()">OK</button>
+    </div> -->
+
+    <script>
+        // let popup1=document.getElementById("popup1");
+        // let popup2=document.getElementById("popup2");
+
+        // function openpopup1(){
+        //     popup1.classList.add("open-popup1")
+        // }
+        // function closepopup1(){
+        //     popup1.classList.remove("open-popup1")
+        // }
+
+        // function openpopup2(){
+        //     popup2.classList.add("open-popup2")
+        // }
+        // function closepopup2(){
+        //     popup2.classList.remove("open-popup2")
+
+        // }
+
+
+
+        // var numb=document.forms['feed-form']['f_fac5_field1','f_fac4_field1','f_fac3_field1','f_fac2_field1','f_fac1_field1'];
+        // function validation(){
+        //     if(numb.value=='')
+        //     {
+        //         alert("Rating field cannot be empty");
+        //         return false;
+        //     }
+        //     if(numb.value>5)
+        //     {
+        //         alert("Rating field cannot be greater than 5");
+        //         return false;
+        //     }
+        //     if(numb.value<1)
+        //     {
+        //         alert("Rating field cannot be less than 1");
+        //         return false;
+        //     }
+        //     return true;
+        // }
+    </script>
+</body>
+</html>
